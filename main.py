@@ -32,7 +32,7 @@ def main():
 
 def addData():
     s3 = S3Connection("AKIA5W5MMY6LGPJHP3EA", "EwwDaVexTVIX2Gvr+uQ9580hHDJNHJ58DTrejYTm")
-    cluster = MongoClient(os.environ['MONGODB_URI'])
+    cluster = MongoClient(s3['MONGODB_URI'])
     db = cluster["caviardb"]
     collection = db["caviarcollect"]
 
