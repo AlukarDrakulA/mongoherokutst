@@ -31,8 +31,8 @@ def main():
         )
 
 def addData():
-    s3 = S3Connection(os.environ['MONGODB_URI'])
-    cluster = MongoClient(s3)
+    s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+    cluster = MongoClient(os.environ['MONGODB_URI'])
     db = cluster["caviardb"]
     collection = db["caviarcollect"]
 
