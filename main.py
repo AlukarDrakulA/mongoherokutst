@@ -3,7 +3,6 @@ from requests.auth import HTTPDigestAuth
 from ipify import get_ip
 import time
 from pymongo import MongoClient
-# from boto.s3.connection import S3Connection
 import os
 
 def main():
@@ -30,7 +29,6 @@ def main():
         )
 
 def addData():
-    # s3 = S3Connection("AKIA5W5MMY6LGPJHP3EA", "EwwDaVexTVIX2Gvr+uQ9580hHDJNHJ58DTrejYTm")
     cluster = MongoClient(os.environ['MONGODB_URI'])
     db = cluster["caviardb"]
     collection = db["caviarcollect"]
